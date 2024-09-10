@@ -1,0 +1,416 @@
+:root {
+    --colour-accent: #5eead4;
+    --colour-highlight:#e2e8f0;
+    --background-accent: #2DD4BF1A;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Inter", sans-serif;
+}
+
+body {
+    background-color: #0f1932;
+    color: #94a3b8;
+    padding: 4rem 2rem;
+    display: grid;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    gap: 6rem;
+}
+
+p {
+    font-size: 0.9rem;
+}
+
+p::selection,
+h1::selection, 
+h2::selection, 
+h3::selection, 
+h4::selection, 
+h5::selection {
+    background: var(--colour-accent);
+    color: #0f1932;
+}
+
+.lightText {
+    color: var(--colour-highlight);
+}
+
+header,
+main,
+footer {
+    position: relative;
+    z-index: 10;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 350px;
+}
+
+header a {
+    text-decoration: none;
+}
+
+header h1 {
+    font-size: 2.7rem;
+}
+
+header h3 {
+    font-weight: 400;
+    font-size: 1.25rem;
+}
+
+nav {
+    display: none;
+}
+
+nav a {
+    font-size: 0.9rem;
+}
+
+.navLinksContainer * {
+    transition-duration: 200ms;
+}
+
+.navLinksContainer *:hover {
+    padding-left: 0.5rem;
+}
+
+.socialLinksContainer {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.socialLinksContainer * {
+    font-size: 1.2rem;
+    color: inherit;
+    text-decoration: none;
+    transition-duration: 200ms;
+}
+
+.socialLinksContainer *:hover {
+    color: var(--colour-highlight)
+}
+
+main { 
+    display: flex;
+    flex-direction: column;
+    gap: 6rem;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.upperText {
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 1rem;
+    letter-spacing: 0.1rem;
+}
+
+.stickyHeader {
+    position: sticky;
+    top: 0;
+    padding: 1rem 0;
+}
+
+.stickyHeader h4 {
+    z-index: 2;
+    position: relative;
+}
+
+.stickyHeader::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: #101A31;
+    opacity: 0.8;
+}
+
+
+.aboutContents {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.aboutContents p {
+    font-size: 1rem;
+}
+
+.anchorText {
+    text-decoration: none;
+    color: var(--colour-highlight);
+    transition-duration: 200ms;
+}
+
+.anchorText:hover {
+    color: var(--colour-accent)
+}
+
+.experienceContents,
+.projectContents {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+}
+
+.experienceCard,
+.projectCard {
+    display: grid;
+    grid-template-columns: repeat(1, minmax(0, 1fr)); 
+}
+
+.experienceCard {
+    gap: 0.5rem;
+}
+
+.projectCard {
+    gap: 1rem;
+}
+
+.cardColumn {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem
+}
+
+.tenure {
+    opacity: 0.7;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+}
+
+.experienceCard p {
+    font-size: 0.9rem;
+}
+
+.cardHeader {
+    font-weight: 400;
+    font-size: 1rem;
+}
+
+.tagContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem 0.5rem;
+    color: var(--colour-accent);
+}
+
+.tag {
+    background: var(--background-accent);
+    padding: 0.5rem;
+    border-radius: 1rem;
+}
+
+.tag p {
+    font-size: 0.8rem;
+}
+
+.projectImageContainer {
+    max-width: 200px;
+    overflow: hidden;
+    display: grid;
+    place-items: center;
+    aspect-ratio: 16 / 9;
+    order: 2;
+    border-radius: 0.25rem;
+}
+
+.projectImageContainer img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.projectStatLink {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.6rem;
+}
+
+.projectArchiveLink,
+.experienceArchiveLink {
+    position: relative;
+    color: var(--colour-highlight);
+    text-decoration: none;
+    transition-duration: 200ms;
+    margin-right: auto;
+}
+
+.projectArchiveLink span,
+.experienceArchiveLink span {
+    transition-duration: 200ms;
+}
+
+.projectArchiveLink:hover span,
+.experienceArchiveLink:hover span {
+    padding-left: 0.5rem;
+}
+
+.projectArchiveLink::after,
+.experienceArchiveLink::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 1.5px;
+    bottom: 0;
+    background: transparent;
+    transition-duration: 200ms;
+}
+
+.projectArchiveLink:hover::after,
+.experienceArchiveLink:hover::after {
+    background: var(--colour-accent);
+}
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+footer p {
+    font-size: 0.9rem;
+}
+
+.scrollToTop {
+    text-decoration: none;
+    color: var(--colour-accent);
+    background: var(--background-accent);
+    padding: 0 0.75rem;
+    aspect-ratio: 1 / 1;
+    display: grid;
+    place-items: center;
+    border-radius: 100%;
+    overflow: hidden;
+}
+
+.scrollToTop:hover {
+    opacity: 0.6;
+    transition-duration: 200ms;
+}
+
+@media (min-width: 600px) {
+    .projectCard,
+    .experienceCard {
+        grid-template-columns: repeat(4, minmax(0, 1fr)); 
+    }
+
+    .cardColumn {
+        grid-column: span 3 / span 3;
+    }
+
+    .projectImageContainer {
+        order: 0;
+    }
+
+    .socialLinksContainer {
+        gap: 1.1rem;
+    }
+
+    .socialLinksContainer i {
+        font-size: 1.3rem;
+    }
+
+    header h1 {
+        font-size: 2.7rem;
+    }
+
+    header h3 {
+        font-size: 1.2rem;
+    }
+
+    header p {
+        max-width: 300px;
+    }
+
+
+}
+
+@media (min-width: 1024px) {
+    body {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        padding: 6rem;
+        padding-top: 0;
+        gap: 0;
+    }
+
+    header {
+        position: sticky;
+        top: 0;
+        margin-left: auto;
+        height: 100vh;
+        padding-bottom: 6rem ;
+    }
+
+    header h1 {
+        font-size: 3rem;
+    }
+
+    header h3 {
+        font-size: 1.4rem;
+    }
+
+    header p {
+        max-width: 300px;
+    }
+
+    nav {
+        padding: 2rem 0;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        flex: 1;
+    }
+
+    nav p {
+        font-size: 0.7rem;
+    }
+
+    .socialLinksContainer {
+        gap: 1.5rem;
+    }
+
+    .socialLinksContainer i {
+        font-size: 2rem;
+    }
+
+    header,
+    main {
+        padding-top: 10rem;
+        max-width: 700px;
+        width: 100%;
+        padding-bottom: 6rem;
+    }
+
+    main {
+        margin-right: auto;
+    }
+
+    .stickyHeader {
+        display: none;
+    }
+
+    footer {
+
+        grid-column: span 2 / span 2;
+        flex-direction: row;
+        max-width: 1400px;
+        margin: 0 auto;
+        width: 100%;
+    }
+}
